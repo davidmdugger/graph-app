@@ -1,15 +1,13 @@
-import React, { Component } from "react";
-import logo from "./logo.svg";
-import "./App.css";
+import React from "react";
+import { Provider } from "react-redux";
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <h1>App</h1>
-      </div>
-    );
-  }
-}
+import store from "./store";
 
-export default App;
+// components
+import Layout from "./components/Layout/Layout";
+
+export default () => (
+  <Provider store={store}>
+    <Layout />
+  </Provider>
+);
