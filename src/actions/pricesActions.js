@@ -1,15 +1,13 @@
-import { GET_PRICES } from './types';
+import { GET_PRICES } from "./types";
 
-export const getPrices => dispatch => {
-  dispatch(isLoading());
-
-  axios
-    .get("https://api.coindesk.com/v1/bpi/historical/close.json")
-    .then(res =>
+export const getPrices = () => dispatch => {
+  fetch("https://api.coindesk.com/v1/bpi/historical/close.json")
+    .then(res => res.json())
+    .then(
       dispatch({
         type: GET_PRICES,
-        payload: res.data
-      })  
+        payload: prices.bpi
+      })
     )
-    .catch(err => console.log(err);
-}
+    .catch(err => console.log(err));
+};
