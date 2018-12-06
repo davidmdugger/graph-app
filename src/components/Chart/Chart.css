@@ -72,7 +72,7 @@
 
 /* animations */
 .split-vertical {
-  animation: slit-in-vertical 0.45s ease-out both;
+  animation: split-vertical 0.45s ease-out both;
 }
 
 @keyframes split-vertical {
