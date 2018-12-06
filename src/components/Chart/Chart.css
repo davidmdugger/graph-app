@@ -1,0 +1,120 @@
+.chart-wrapper {
+  position: relative;
+  display: flex;
+  margin: 20px 0;
+}
+
+.chart {
+  display: flex;
+  flex-direction: row-reverse;
+  position: relative;
+  width: 100%;
+  height: 250px;
+  background: #ccc;
+  transform: rotate(180deg);
+  border: 1px solid #454545;
+}
+
+/* hover on the chart to see the lines behind the bars */
+.chart:hover > .bar {
+  opacity: 0.75;
+}
+
+.bar {
+  z-index: 10;
+  flex: 1;
+  width: 20px;
+  cursor: pointer;
+  background-color: blue;
+  border: 1px solid #aaa;
+  transition: 500ms;
+}
+
+.bar:hover {
+  transition: 1000ms;
+  background-color: green;
+  opacity: 1;
+}
+
+.bar .price-usd {
+  color: #fff;
+  padding: 5px;
+  transform: rotate(90deg);
+  transform: scaleY(0);
+}
+
+.bar:hover .price-usd {
+  transform: scaleY(1);
+  transform: rotate(90deg);
+}
+
+.marker {
+  position: absolute;
+  width: 100%;
+  bottom: 10%;
+  height: 2px;
+  background-color: #aaa;
+}
+
+.axisY {
+  display: flex;
+  flex-direction: column-reverse;
+  margin: 0 3px -15px;
+}
+
+.axisY > p {
+  display: flex;
+  align-self: flex-end;
+  width: 100%;
+  height: 9.1%;
+  font-size: 0.5em;
+}
+
+/* animations */
+.split-vertical {
+  animation: slit-in-vertical 0.45s ease-out both;
+}
+
+@keyframes split-vertical {
+  0% {
+    transform: translateZ(-800px) rotateY(90deg);
+    opacity: 0;
+  }
+  54% {
+    transform: translateZ(-160px) rotateY(87deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateZ(0) rotateY(0);
+  }
+}
+
+.puff-in-center {
+  animation: puff-in-center 0.7s;
+}
+
+@keyframes puff-in-center {
+  0% {
+    transform: scale(2);
+    filter: blur(2px);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    filter: blur(0px);
+    opacity: 1;
+  }
+}
+
+.fade-in {
+  animation: fade-in 1000ms;
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

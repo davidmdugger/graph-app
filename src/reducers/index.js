@@ -1,6 +1,6 @@
 import { combineReducers } from "redux";
-import pricesReducer from "./pricesReducer";
+import graphReducer from "./graphReducer";
 
 export default combineReducers({
-  prices: pricesReducer
+  graph: graphReducer
 });
